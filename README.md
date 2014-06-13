@@ -18,5 +18,12 @@ Just a playground for trying new things and seeing what I can break / fix.
 * implement "features" structure in both api and web interface (http://the.fringe.ninja/blog/481/organizing-per-feature-in-nancy)
 * implement a task runner to minify and concatenate the javascript files into one dist file (or something like that)
 * javascript linter
+* registration screen does not give feedback at all. Should automatically login and redirect.
+* login page doesn't give feedback on bad password.
 * android version
 * iphone version
+
+
+### check it out
+api at glkuapi.azurewebsites.net
+web at glku.azurewebsites.net
