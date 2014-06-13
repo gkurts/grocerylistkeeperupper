@@ -20,6 +20,8 @@ Just a playground for trying new things and seeing what I can break / fix.
 * javascript linter
 * registration screen does not give feedback at all. Should automatically login and redirect.
 * login page doesn't give feedback on bad password.
+* add a logout option
+* persist token to local cookie
 * android version
 * iphone version
 
