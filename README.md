@@ -25,5 +25,5 @@ Just a playground for trying new things and seeing what I can break / fix.
 
 
 ### check it out
-api at glkuapi.azurewebsites.net
-web at glku.azurewebsites.net
+* api at  http://glkuapi.azurewebsites.net
+* web at http://glku.azurewebsites.net
