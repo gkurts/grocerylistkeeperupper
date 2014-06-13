@@ -1,0 +1,45 @@
+<div class="container" style="margin-top:30px">
+    <div class="col-md-6 col-md-offset-3">
+
+            <tabset justified="true">
+                <tab heading="Sign In">
+                    <div class="panel-heading"><h3 class="panel-title"><strong>Sign in</strong></h3></div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" style="border-radius:0px" ng-model="credentials.username" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" style="border-radius:0px" ng-model="credentials.password" placeholder="Password">
+                            </div>
+                            <button type="submit" ng-click="doLogin()" class="btn btn-sm btn-default">Sign in</button>
+                        </form>
+                    </div>
+                </tab>
+                <tab heading="Register">
+                    <div class="panel-heading"><h3 class="panel-title"><strong>Register</strong></h3></div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" class="form-control" ng-model="register.fullname" style="border-radius:0px" id="exampleInputEmail1" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" ng-model="register.email" style="border-radius:0px" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" ng-model="register.password" style="border-radius:0px" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <button type="submit" ng-click="doRegister()" class="btn btn-sm btn-default">Register</button>
+                        </form>
+                    </div>
+                </tab>
+            </tabset>
+
+
+    </div>
+</div>

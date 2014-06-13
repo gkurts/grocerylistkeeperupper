@@ -1,0 +1,31 @@
+﻿<div class="row">
+    <div class="col-md-8">
+        <h3><span ng-bind="list.title">loading...</span> <a href ng-click="deletelist()"><span class="glyphicon glyphicon-remove"></span></a></h3>
+        <div>
+            <table class="table table-bordered">
+                <tr>
+                <th>Quantity</th>
+                <th>Item</th>
+                <th></th>
+                <tr ng-repeat="item in items">
+                    <td style="width:40px"><a href="#" editable-number="item.qty" required onbeforesave="changeQty(item.id, $data)">{{item.qty}}</a></td>
+                    <td>
+                        <a ng-if="!item.got" href="#" editable-text="item.title" required onbeforesave="updateItem(item.id, $data)">{{ item.title }}</a>
+                        <span ng-if="item.got"><strike>{{item.title}}</strike></span>
+                    </td>
+                    <td style="width:160px">
+                        <a ng-if="!item.got" href ng-click="gotItem(item.id, true)"><span class="glyphicon glyphicon-ok"></span> Got It! </a>
+                        <a ng-if="item.got" href ng-click="gotItem(item.id, false)"><span class="glyphicon glyphicon-minus"></span> Undo </a>
+                        <a href ng-click="deleteItem(item.id)"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <form ng-submit="addItem()">
+                <input type="text" placeholder="Add item..." ng-model="itemtext" />
+            </form>
+        </div>
+
+    </div>
+</div>
