@@ -5,6 +5,10 @@ Just a playground for trying new things and seeing what I can break / fix.
 
 I ultimately would like to use this as a basis for future projects, so I'm not planning on adding a bunch of features - just a core framework that I can easiliy base a new project on with minimal effort.
 
+Currently, I'm seeing about a 100ms response time from the from azure to my browser. Not too shabby but I'd like to see if I could get it down even more. Network latency may not let me, though. Internally, I'm seeing about a 15ms running through the Visual Studio debugger.
+
+Since angular caches the page templates locally and all we're doing is pulling json across the wire, page loads appear to be nearly instant.
+
 ### contains:
 * NancyFx based API
 * Nancy.Authentication.Token for authentication
