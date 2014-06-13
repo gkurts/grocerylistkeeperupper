@@ -3,6 +3,8 @@ grocerylistkeeperupper
 
 Just a playground for trying new things and seeing what I can break / fix.
 
+I ultimately would like to use this as a basis for future projects, so I'm not planning on adding a bunch of features - just a core framework that I can easiliy base a new project on with minimal effort.
+
 ### contains:
 * NancyFx based API
 * Nancy.Authentication.Token for authentication
