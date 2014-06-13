@@ -8,8 +8,6 @@ Just a playground for trying new things and seeing what I can break / fix.
 * Nancy.Authentication.Token for authentication
 * Dapper.Net for a clean and **fast** ORM
 * SQL Server based, though I'm looking at options for a document based data store. Maybe RavenDb or MongoDb.
-
-
 * AngularJS / Bootstrap based web interface
 
 
