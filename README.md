@@ -9,6 +9,8 @@ Currently, I'm seeing about a 100ms response time from the from azure to my brow
 
 Since angular caches the page templates locally and all we're doing is pulling json across the wire, page loads appear to be nearly instant.
 
+The Nancy.Authentication.Toekn framework uses the filesystem to store the keyring for token generation / validation. I would like to move this to some type of key/value store like Redis. This way it will still persist to disk and be reboot safe, but it will reside in memory and be nice and fast. It also gives us the option of having a server farm setup that uses the same keyring.
+
 ### contains:
 * NancyFx based API
 * Nancy.Authentication.Token for authentication
