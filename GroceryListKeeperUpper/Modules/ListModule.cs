@@ -7,7 +7,6 @@ using System.Web.UI.WebControls.WebParts;
 using Dapper;
 using GroceryListKeeperUpper.Models;
 using Nancy;
-using Nancy.Authentication.Token;
 using Nancy.ModelBinding;
 using Nancy.Responses;
 using Nancy.Security;

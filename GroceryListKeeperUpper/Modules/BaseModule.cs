@@ -38,7 +38,7 @@ namespace GroceryListKeeperUpper.Modules
             get
             {
                 if (_userId == 0)
-                    _userId = Convert.ToInt32(Context.CurrentUser.Claims.First());
+                    _userId = (Context.CurrentUser as UserIdentity).Id;
                 return _userId;
             }
         }

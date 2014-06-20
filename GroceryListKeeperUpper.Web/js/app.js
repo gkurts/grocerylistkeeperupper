@@ -7,7 +7,7 @@ var appControllers = angular.module('appControllers', []);
 
 var options = {};
     options.api = {};
-    options.api.base_url = 'http://glkuapi.azurewebsites.net/api/v1';
+    options.api.base_url = 'http://localhost:12009/api/v1';
 
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){
 	$routeProvider.

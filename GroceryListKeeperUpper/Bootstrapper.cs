@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
+using System.Security.Claims;
+using GroceryListKeeperUpper.Features.Authentication;
 using Nancy;
-using Nancy.Authentication.Token;
-using Nancy.Authentication.Token.Storage;
 using Nancy.Bootstrapper;
+using Nancy.Owin;
 using Nancy.TinyIoc;
 using Newtonsoft.Json;
 
@@ -32,13 +33,18 @@ namespace GroceryListKeeperUpper
             base.RequestStartup(container, pipelines, context);
 
 
-            Tokenizer t = new Tokenizer(configurator =>
+            var owinEnvironment = context.GetOwinEnvironment();
+            var user = owinEnvironment["server.User"] as ClaimsPrincipal;
+
+            if (user != null && user.Claims.Any(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid"))
             {
-                configurator.TokenExpiration(() => TimeSpan.FromDays(5));
-                configurator.KeyExpiration(() => TimeSpan.FromDays(10));
-            });
-            
-            TokenAuthentication.Enable(pipelines, new TokenAuthenticationConfiguration(t));
+                context.CurrentUser = new UserIdentity()
+                {
+                    Id = int.Parse(user.Claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid").Value),
+                    UserName = user.Claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress").Value,
+                    Claims = user.Claims.Where(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").Select(x => x.Value),
+                };
+            }
 
         }
 
